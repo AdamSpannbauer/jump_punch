@@ -22,5 +22,5 @@ def start_server():
 
 
 if __name__ == "__main__":
-    print("[STARTING] server is starting...")
+    print(f"[STARTING] server is running on {SERVER, PORT}")
     start_server()
