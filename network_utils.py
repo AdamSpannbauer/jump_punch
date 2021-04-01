@@ -5,8 +5,8 @@ FORMAT = "utf-8"
 PORT = 5555
 
 
-def dig(*args):
-    cmd = ["dig"] + list(*args)
+def dig(args):
+    cmd = ["dig"] + args
     output = subprocess.check_output(cmd)
     return output.strip().decode()
 
