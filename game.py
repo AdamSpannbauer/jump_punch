@@ -6,7 +6,7 @@ class Game:
     def update(self):
         pass
 
-    def draw_HUD(self):
+    def draw_hud(self):
         pass
 
     def draw(self):
