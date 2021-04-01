@@ -13,7 +13,7 @@ def dig(args):
 
 def dig_get_host_name():
     """Run dig command to find public IP
-    Seems to work on both DO ubuntu droplet and adam mac
+    Seems to work on Digital Ocean Ubuntu droplet
 
     If FileNotFoundError -> no dig command found
     If ValueError -> dig command ran but returned empty
@@ -22,7 +22,7 @@ def dig_get_host_name():
     addr = dig(dig_args)
 
     # i've had cases of cmd running w/o error, but
-    # returning blank bytes object, throwing error in this case
+    # returning blank str
     if not addr:
         raise ValueError
 
