@@ -1,4 +1,5 @@
 import pygame
+from player import Player
 
 BLACK = (0, 0, 0)
 GRAY = (100, 100, 100)
@@ -43,7 +44,9 @@ class Game:
         pass
 
     def draw(self):
-        self.screen.fill(BLACK)
+        self.screen.fill(GRAY)
+        for player in self.players:
+            player.draw(self.screen)
 
     def play(self):
         self._init_pygame()
@@ -57,6 +60,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    players = None
+    players = [Player(200, 200), Player(400, 200, (225, 20, 20))]
     game = Game(players)
     game.play()

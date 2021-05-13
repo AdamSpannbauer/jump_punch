@@ -1,8 +1,11 @@
+import pygame
+
+
 class Player:
-    def __init__(self, x, y):
+    def __init__(self, x, y, color=(200, 50, 200)):
         self.x = x
         self.y = y
-
+        self.color = color
         self.speed = 1
         self.gravity = 1
         self.jump_speed = 1
@@ -11,8 +14,8 @@ class Player:
         self.health = 1
         self.network_client = None
 
-    def draw(self):
-        pass
+    def draw(self, screen):
+        pygame.draw.rect(screen, self.color, (self.x, self.y, 50, 50))
 
     def update(self):
         pass
@@ -24,7 +27,19 @@ class Player:
         pass
 
     def move(self):
-        pass
+        keys = pygame.key.get_pressed()
+
+        if keys[pygame.K_LEFT]:
+            self.x -= self.vel
+
+        if keys[pygame.K_RIGHT]:
+            self.x += self.vel
+
+        if keys[pygame.K_UP]:
+            self.y -= self.vel
+
+        if keys[pygame.K_DOWN]:
+            self.y += self.vel
 
     def send(self):
         pass
