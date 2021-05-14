@@ -49,6 +49,18 @@ def get_host_name(default="127.0.0.1"):
     return default
 
 
+def encode_network_data(player_id, x, y):
+    loc_str = f"{player_id},{x},{y}"
+    return loc_str.encode(FORMAT)
+
+
+def decode_network_data(data):
+    loc_str = data.decode(FORMAT)
+    player_id, x_str, y_str = loc_str.split(",")
+
+    return player_id, int(x_str), int(y_str)
+
+
 if __name__ == "__main__":
     ip_addr = get_host_name()
     print(f"Best guess for current box's address:\n{ip_addr}")
