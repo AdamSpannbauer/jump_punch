@@ -60,6 +60,6 @@ class Game:
 
 
 if __name__ == "__main__":
-    players = [Player(200, 200), Player(400, 200, (225, 20, 20))]
-    game = Game(players)
+    my_players = [Player(200, 200), Player(400, 200, (225, 20, 20))]
+    game = Game(my_players)
     game.play()

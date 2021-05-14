@@ -30,16 +30,16 @@ class Player:
         keys = pygame.key.get_pressed()
 
         if keys[pygame.K_LEFT]:
-            self.x -= self.vel
+            self.x -= self.speed
 
         if keys[pygame.K_RIGHT]:
-            self.x += self.vel
+            self.x += self.speed
 
         if keys[pygame.K_UP]:
-            self.y -= self.vel
+            self.y -= self.speed
 
         if keys[pygame.K_DOWN]:
-            self.y += self.vel
+            self.y += self.speed
 
     def send(self):
         pass
